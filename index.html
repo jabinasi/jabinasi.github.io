@@ -86,6 +86,20 @@ section[id],#home{scroll-margin-top:85px}
 .lightbox-next{right:12px;top:50%;transform:translateY(-50%)}
 body.lightbox-open{overflow:hidden}
 @media(max-width:700px){.lightbox{padding:68px 46px 58px}.lightbox-control{width:36px;height:36px}.lightbox-prev{left:5px}.lightbox-next{right:5px}}
+
+/* Animated background: a fresh palette on every page load. */
+body {
+  background: linear-gradient(125deg, var(--bg1, #101b17), var(--bg2, #243e35), var(--bg3, #382c40));
+  background-size: 350% 350%;
+  animation: backgroundDrift 20s ease-in-out infinite;
+}
+@keyframes backgroundDrift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+}
 </style>
 </head>
 <body>
@@ -188,6 +202,24 @@ body.lightbox-open{overflow:hidden}
 </div>
 </footer>
 <script>
+// Choose a different palette from the previous visit, when possible.
+(function () {
+  const palettes = [
+    ["#101b17", "#294a3b", "#423349"], // Forest dusk
+    ["#101d32", "#234f70", "#493d65"], // Midnight ocean
+    ["#281b32", "#603d64", "#3b334f"], // Velvet plum
+    ["#1d2924", "#496348", "#554233"], // Olive bronze
+    ["#251e32", "#674352", "#3b5261"]  // Rose twilight
+  ];
+  let previous = -1;
+  try { previous = Number(sessionStorage.getItem("jabinasiLastPalette")); } catch (_) {}
+  let index = Math.floor(Math.random() * (palettes.length - 1));
+  if (Number.isInteger(previous) && previous >= 0 && previous < palettes.length && index >= previous) index++;
+  const chosen = palettes[index];
+  ["--bg1", "--bg2", "--bg3"].forEach((name, i) => document.body.style.setProperty(name, chosen[i]));
+  try { sessionStorage.setItem("jabinasiLastPalette", String(index)); } catch (_) {}
+})();
+
 document.getElementById("year").textContent=new Date().getFullYear();
 const menu=document.getElementById("menu");
 const links=document.getElementById("links");
