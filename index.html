@@ -1,57 +1,241 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b0b0d">
-<meta name="description" content="JABINASI — a personal collection of family, photography, and life's beautiful moments, curated by Jabir.">
-<title>JABINASI | Life's Beautiful Moments</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101b17">
+<meta name="description" content="Jabinasi — personal moments and photography.">
+<title>JABINASI | Personal Gallery</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--bg:#0b0b0d;--panel:#151518;--gold:#c9a86a;--ivory:#f5f1e9;--muted:#b9b5ad;--line:#ffffff24}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--bg);color:var(--ivory);font-family:'DM Sans',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}body.lightbox-open{overflow:hidden}a{color:inherit;text-decoration:none}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}img{max-width:100%}.container{width:min(1220px,90%);margin-inline:auto}.eyebrow{color:var(--gold);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;font-weight:700}.serif,h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:400;line-height:1.12}h1{font-size:clamp(3.6rem,8vw,8rem);letter-spacing:-.04em;margin:18px 0 24px}h1 em{color:var(--gold);font-weight:400}h2{font-size:clamp(2.6rem,5vw,5rem);letter-spacing:-.03em;margin:12px 0 20px}p{margin-top:0}.muted{color:var(--muted)}
-.site-header{position:sticky;top:0;z-index:30;background:#0b0b0de8;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-size:1.35rem;letter-spacing:.22em;font-weight:700;color:var(--ivory)}.brand span{color:var(--gold)}.nav-links{display:flex;gap:34px;align-items:center}.nav-links a{font-size:.83rem;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}.nav-links a:hover{color:var(--gold)}.menu-toggle{display:none;border:1px solid var(--line);background:transparent;color:var(--ivory);padding:9px 13px;cursor:pointer;border-radius:3px}
-.hero{padding:110px 0 0;text-align:center}.hero-copy{max-width:880px;margin:auto}.hero-intro{max-width:610px;margin:0 auto 32px;color:var(--muted);font-size:1.06rem}.button{display:inline-flex;align-items:center;justify-content:center;min-height:49px;padding:12px 27px;background:var(--gold);color:#111114;font-weight:700;font-size:.76rem;letter-spacing:.15em;text-transform:uppercase;border:1px solid var(--gold);transition:background .2s,transform .2s}.button:hover{background:#e3c48b;transform:translateY(-2px)}.button-outline{background:transparent;color:var(--ivory);border-color:#ffffff55}.button-outline:hover{background:#ffffff15}.hero-frame{position:relative;margin-top:74px;height:clamp(350px,58vw,720px);overflow:hidden;background:var(--panel)}.hero-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}.hero-frame:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#0b0b0d90);pointer-events:none}.hero-caption{position:absolute;bottom:28px;left:4%;z-index:1;color:#fff;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase}
-section{padding:115px 0}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:45px}.section-heading p{max-width:330px;color:var(--muted);margin:0}.rule{width:60px;height:1px;background:var(--gold);margin:24px 0}.about{background:var(--panel)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:12%;align-items:center}.about-text{font-size:1.12rem;color:var(--muted);max-width:590px}.about-quote{border-left:1px solid var(--gold);padding:20px 0 20px 35px;font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,3.5rem);line-height:1.3;color:var(--ivory)}
-.gallery-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:22px}.photo{grid-column:span 4;margin:0;min-width:0}.photo:first-child{grid-column:span 7}.photo:nth-child(2){grid-column:span 5}.photo-button{display:block;position:relative;width:100%;padding:0;border:0;background:var(--panel);cursor:zoom-in;overflow:hidden;text-align:left}.photo-button img{display:block;width:100%;height:380px;object-fit:cover;transition:transform .55s,filter .55s}.photo:first-child img,.photo:nth-child(2) img{height:480px}.photo-button:hover img{transform:scale(1.045);filter:brightness(.84)}.photo-button:after{content:'VIEW PHOTO ↗';position:absolute;bottom:22px;right:22px;color:white;font-size:.7rem;letter-spacing:.14em;text-shadow:0 1px 8px #000;opacity:0;transition:opacity .2s}.photo-button:hover:after,.photo-button:focus-visible:after{opacity:1}.photo figcaption{padding:16px 0 0;font-family:'Playfair Display',serif;font-size:1.5rem}.photo figcaption small{display:block;font-family:'DM Sans',sans-serif;color:var(--gold);font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;margin-top:4px}
-.contact{background:var(--panel);text-align:center}.contact-inner{max-width:720px;margin:auto}.contact p{color:var(--muted)}.email{display:block;margin:20px 0 34px;font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,2.4rem);color:var(--gold);overflow-wrap:anywhere}.email:hover{text-decoration:underline;text-underline-offset:6px}.footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.78rem}.footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer a:hover{color:var(--gold)}
-.lightbox[hidden]{display:none}.lightbox{position:fixed;inset:0;z-index:100;background:#050505f5;display:flex;align-items:center;justify-content:center;padding:65px 65px 75px}.lightbox img{max-width:100%;max-height:calc(100dvh - 150px);object-fit:contain;box-shadow:0 10px 60px #0009}.lightbox-close,.lightbox-prev,.lightbox-next{position:absolute;background:#171719d9;color:white;border:1px solid #ffffff44;width:46px;height:46px;cursor:pointer;font-size:1.7rem;display:grid;place-items:center}.lightbox-close{top:18px;right:18px}.lightbox-prev{left:12px;top:50%;transform:translateY(-50%)}.lightbox-next{right:12px;top:50%;transform:translateY(-50%)}.lightbox-label{position:absolute;bottom:25px;left:20px;right:20px;text-align:center;color:var(--ivory);font-size:.85rem;letter-spacing:.06em}
-@media(max-width:800px){.about-grid{grid-template-columns:1fr;gap:30px}.section-heading{display:block}.section-heading p{margin-top:16px}.gallery-grid{gap:16px}.photo,.photo:first-child,.photo:nth-child(2){grid-column:span 6}.photo-button img,.photo:first-child img,.photo:nth-child(2) img{height:350px}}
-@media(max-width:650px){.nav{min-height:68px}.brand{font-size:1.08rem}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#111114;padding:24px 5%;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:20px}.nav-links.open{display:flex}.hero{padding-top:70px}.hero-frame{margin-top:52px;height:390px}.hero-caption{bottom:20px}.hero-intro{font-size:.96rem}section{padding:80px 0}.gallery-grid{display:block}.photo{margin-bottom:30px}.photo-button img,.photo:first-child img,.photo:nth-child(2) img{height:auto;max-height:540px;aspect-ratio:4/3;object-fit:cover}.about-quote{padding-left:22px}.lightbox{padding:75px 40px}.lightbox img{max-height:calc(100dvh - 170px)}.lightbox-prev{left:3px}.lightbox-next{right:3px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+:root{--bg:#101b17;--panel:#192820;--gold:#d7ba82;--cream:#f3f0e6;--muted:#b3bdb3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:"DM Sans",sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1120px,90%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#101b17ed;border-bottom:1px solid #ffffff17;backdrop-filter:blur(16px)}
+nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:23px;font-weight:700;letter-spacing:4px;color:var(--gold)}
+.links{display:flex;gap:30px}
+.links a:hover,.email:hover{color:var(--gold)}
+.menu{display:none;background:none;border:1px solid #5c6c5e;border-radius:6px;color:var(--gold);padding:7px 12px;cursor:pointer}
+.hero{padding:95px 0 65px;text-align:center}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:4px;text-transform:uppercase}
+h1,h2,h3{font-family:"Playfair Display",serif;font-weight:400;line-height:1.18}
+h1{font-size:clamp(45px,7vw,88px);margin:24px auto;max-width:900px}
+h1 em{color:var(--gold);font-weight:400}
+.intro{max-width:610px;margin:0 auto 30px;color:var(--muted);font-size:17px}
+.btn{display:inline-block;background:var(--gold);color:#16221b;padding:14px 30px;border-radius:3px;font-weight:700;letter-spacing:1px}
+.btn:hover{background:#efdaa9}
+.hero-photo{width:100%;height:min(56vw,600px);min-height:280px;object-fit:cover;object-position:center;border-radius:5px;display:block;margin-top:65px}
+section{padding:85px 0}
+.section-head{text-align:center;margin-bottom:42px}
+h2{font-size:clamp(34px,5vw,56px);margin:15px 0}
+.section-head p,.about p,.contact p{color:var(--muted)}
+.about{background:var(--panel);text-align:center}
+.about p{max-width:670px;margin:0 auto;font-size:17px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.photo{margin:0;background:var(--panel);overflow:hidden;border-radius:5px}
+.photo img{display:block;width:100%;height:310px;object-fit:cover;transition:transform .4s}
+.photo:hover img{transform:scale(1.04)}
+.photo figcaption{padding:18px 20px;color:var(--gold)}
+.contact{text-align:center;background:var(--panel)}
+.email{display:block;color:var(--gold);overflow-wrap:anywhere;margin:18px 0 28px;font-size:clamp(17px,3vw,23px)}
+footer{padding:30px 0;text-align:center;color:var(--muted);border-top:1px solid #ffffff1b;font-size:13px}
+@media(max-width:700px){
+nav{min-height:65px}
+.logo{font-size:19px}
+.menu{display:block}
+.links{display:none;position:absolute;top:65px;left:0;right:0;background:var(--bg);padding:22px 5%;flex-direction:column;gap:20px;border-bottom:1px solid #566250}
+.links.open{display:flex}
+.hero{padding-top:60px}
+.hero-photo{margin-top:40px;height:320px}
+section{padding:65px 0}
+.gallery{grid-template-columns:1fr}
+.photo img{height:auto;max-height:450px;object-fit:cover}
+}
+@media(min-width:701px) and (max-width:950px){
+.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.photo img{transition:none}
+}
+
+/* Small enhancements, preserving the original visual design */
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+section[id],#home{scroll-margin-top:85px}
+.photo img{cursor:zoom-in}
+.photo:focus-within{outline:1px solid var(--gold);outline-offset:3px}
+.photo button{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;text-align:left}
+.photo button img{width:100%}
+.lightbox[hidden]{display:none}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(6,12,9,.96);display:flex;align-items:center;justify-content:center;padding:65px 58px 58px}
+.lightbox-inner{width:min(100%,1100px);display:flex;flex-direction:column;align-items:center;gap:12px}
+.lightbox img{display:block;max-width:100%;max-height:calc(100dvh - 155px);width:auto;height:auto;object-fit:contain;border-radius:4px}
+.lightbox-caption{color:var(--cream);text-align:center}
+.lightbox-control{position:absolute;display:grid;place-items:center;border:1px solid #ffffff55;background:#192820;color:var(--cream);width:43px;height:43px;border-radius:50%;cursor:pointer}
+.lightbox-control:hover{color:var(--gold);border-color:var(--gold)}
+.lightbox-close{top:17px;right:20px}
+.lightbox-prev{left:12px;top:50%;transform:translateY(-50%)}
+.lightbox-next{right:12px;top:50%;transform:translateY(-50%)}
+body.lightbox-open{overflow:hidden}
+@media(max-width:700px){.lightbox{padding:68px 46px 58px}.lightbox-control{width:36px;height:36px}.lightbox-prev{left:5px}.lightbox-next{right:5px}}
 </style>
 </head>
 <body>
-<header class="site-header"><nav class="container nav" aria-label="Main navigation"><a class="brand" href="#home">JABINASI<span>.</span></a><button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">☰ Menu</button><div class="nav-links" id="nav-links"><a href="#home">Home</a><a href="#about">Our Story</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div></nav></header>
+<header>
+<nav class="container" aria-label="Main navigation">
+<a class="logo" href="#home">JABINASI.</a>
+<button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="links">☰ Menu</button>
+<div class="links" id="links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+
 <main>
-<div id="home" class="hero"><div class="container hero-copy"><div class="eyebrow">A personal collection · Family & photography</div><h1>Life's beautiful <em>moments.</em></h1><p class="hero-intro">A personal collection of family, photography, memories and the little things that make life extraordinary.</p><a class="button" href="#gallery">Explore the gallery</a></div><div class="hero-frame"><img src="images/family-hero.png" alt="Family enjoying a happy moment together" fetchpriority="high"><span class="hero-caption">JABINASI · Moments that matter</span></div></div>
-<section class="about" id="about"><div class="container about-grid"><div><div class="eyebrow">A little about me</div><h2>Welcome to<br><em>my world.</em></h2><div class="rule"></div><p class="about-text">I'm Jabir. This is my little corner of the internet — a place to celebrate family, creativity, photography and unforgettable moments. Every photograph tells a story, and these are some of the stories closest to my heart.</p></div><div class="about-quote">The most beautiful stories are the ones we live together.</div></div></section>
-<section id="gallery"><div class="container"><div class="section-heading"><div><div class="eyebrow">Captured with love</div><h2>Our Gallery</h2></div><p>Beautiful memories, one frame at a time. Select a photograph to see it in full.</p></div><div class="gallery-grid">
-<figure class="photo"><button class="photo-button" type="button" data-index="0" aria-label="View Autumn Joy full screen"><img src="images/autumn-joy.png" alt="Joyful portrait with autumn leaves" loading="lazy" decoding="async"></button><figcaption>Autumn Joy<small>Memory 01</small></figcaption></figure>
-<figure class="photo"><button class="photo-button" type="button" data-index="1" aria-label="View Little Moments full screen"><img src="images/teddy-bear.png" alt="A happy moment with a giant teddy bear" loading="lazy" decoding="async"></button><figcaption>Little Moments<small>Memory 02</small></figcaption></figure>
-<figure class="photo"><button class="photo-button" type="button" data-index="2" aria-label="View Together Forever full screen"><img src="images/family-moments.png" alt="Warm family portrait on a sofa" loading="lazy" decoding="async"></button><figcaption>Together Forever<small>Memory 03</small></figcaption></figure>
-</div></div></section>
-<section class="contact" id="contact"><div class="container contact-inner"><div class="eyebrow">Get in touch</div><h2>Let's Connect.</h2><p>Have a message or simply want to say hello?</p><a class="email" href="mailto:jabi.nasi@icloud.com">jabi.nasi@icloud.com</a><a class="button" href="mailto:jabi.nasi@icloud.com?subject=Hello%20Jabinasi">Send an email</a></div></section>
+<div class="container" id="home">
+<div class="hero">
+<div class="eyebrow">Welcome to my personal space</div>
+<h1>Life's beautiful <em>moments.</em></h1>
+<p class="intro">A personal collection of family, photography, memories and the little things that make life extraordinary.</p>
+<a class="btn" href="#gallery">EXPLORE MY GALLERY</a>
+<img class="hero-photo" src="images/family-hero.png" alt="Family enjoying a happy moment together" fetchpriority="high">
+</div>
+</div>
+
+<section class="about" id="about">
+<div class="container">
+<div class="eyebrow">A little about me</div>
+<h2>Welcome to my world.</h2>
+<p>I'm Jabir. This is my little corner of the internet — a place to celebrate family, creativity, photography and unforgettable moments. Every photograph tells a story, and these are some of the stories closest to my heart.</p>
+</div>
+</section>
+
+<section id="gallery">
+<div class="container">
+<div class="section-head">
+<div class="eyebrow">Captured with love</div>
+<h2>Our Gallery</h2>
+<p>Beautiful memories, one frame at a time.</p>
+</div>
+<div class="gallery">
+<figure class="photo">
+<button type="button" class="gallery-open" aria-label="View photo full screen"><img src="images/autumn-joy.png" alt="Joyful portrait with autumn leaves" loading="lazy"></button>
+<figcaption>Autumn Joy</figcaption>
+</figure>
+<figure class="photo">
+<button type="button" class="gallery-open" aria-label="View photo full screen"><img src="images/teddy-bear.png" alt="A happy moment with a giant teddy bear" loading="lazy"></button>
+<figcaption>Little Moments</figcaption>
+</figure>
+<figure class="photo">
+<button type="button" class="gallery-open" aria-label="View photo full screen"><img src="images/family-moments.png" alt="Warm family portrait on a sofa" loading="lazy"></button>
+<figcaption>Together Forever</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+<div class="eyebrow">Get in touch</div>
+<h2>Let's Connect.</h2>
+<p>Have a message or simply want to say hello?</p>
+<a class="email" href="mailto:jabi.nasi@icloud.com">jabi.nasi@icloud.com</a>
+<a class="btn" href="mailto:jabi.nasi@icloud.com?subject=Hello%20Jabinasi">SEND AN EMAIL</a>
+</div>
+</section>
 </main>
-<footer class="footer"><div class="container"><span>© <span id="year"></span> JABINASI. Made with love.</span><a href="#home">Back to top ↑</a></div></footer>
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden><button class="lightbox-close" id="lightbox-close" aria-label="Close photo viewer">×</button><button class="lightbox-prev" id="lightbox-prev" aria-label="Previous photo">‹</button><img id="lightbox-image" alt=""><button class="lightbox-next" id="lightbox-next" aria-label="Next photo">›</button><div class="lightbox-label" id="lightbox-label" aria-live="polite"></div></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-describedby="lightbox-caption" hidden>
+  <button class="lightbox-control lightbox-close" id="lightbox-close" aria-label="Close photo viewer">✕</button>
+  <button class="lightbox-control lightbox-prev" id="lightbox-prev" aria-label="Previous photo">❮</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-image" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+  <button class="lightbox-control lightbox-next" id="lightbox-next" aria-label="Next photo">❯</button>
+</div>
+
+
+<footer>
+<div class="container">
+© <span id="year"></span> JABINASI. Made with love.
+</div>
+</footer>
 <script>
-'use strict';
-document.getElementById('year').textContent=new Date().getFullYear();
-const toggle=document.getElementById('menu-toggle');const navLinks=document.getElementById('nav-links');
-toggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');toggle.setAttribute('aria-expanded','false');}));
-const photos=[{src:'images/autumn-joy.png',alt:'Joyful portrait with autumn leaves',title:'Autumn Joy'},{src:'images/teddy-bear.png',alt:'A happy moment with a giant teddy bear',title:'Little Moments'},{src:'images/family-moments.png',alt:'Warm family portrait on a sofa',title:'Together Forever'}];
-const lightbox=document.getElementById('lightbox'),lightboxImage=document.getElementById('lightbox-image'),lightboxLabel=document.getElementById('lightbox-label');let active=0,lastFocused=null;
-function showPhoto(index){active=(index+photos.length)%photos.length;const photo=photos[active];lightboxImage.src=photo.src;lightboxImage.alt=photo.alt;lightboxLabel.textContent=`${photo.title} · ${active+1} / ${photos.length}`;}
-function openPhoto(index){lastFocused=document.activeElement;showPhoto(index);lightbox.hidden=false;document.body.classList.add('lightbox-open');document.getElementById('lightbox-close').focus();}
-function closePhoto(){lightbox.hidden=true;document.body.classList.remove('lightbox-open');lightboxImage.removeAttribute('src');if(lastFocused)lastFocused.focus();}
-document.querySelectorAll('.photo-button').forEach(button=>button.addEventListener('click',()=>openPhoto(Number(button.dataset.index))));
-document.getElementById('lightbox-close').addEventListener('click',closePhoto);document.getElementById('lightbox-prev').addEventListener('click',()=>showPhoto(active-1));document.getElementById('lightbox-next').addEventListener('click',()=>showPhoto(active+1));
-lightbox.addEventListener('click',event=>{if(event.target===lightbox)closePhoto();});
-document.addEventListener('keydown',event=>{if(lightbox.hidden)return;if(event.key==='Escape')closePhoto();else if(event.key==='ArrowLeft')showPhoto(active-1);else if(event.key==='ArrowRight')showPhoto(active+1);else if(event.key==='Tab'){const controls=[document.getElementById('lightbox-close'),document.getElementById('lightbox-prev'),document.getElementById('lightbox-next')];const current=controls.indexOf(document.activeElement);if(event.shiftKey&&current===0){event.preventDefault();controls[2].focus();}else if(!event.shiftKey&&current===2){event.preventDefault();controls[0].focus();}else if(current===-1){event.preventDefault();controls[0].focus();}}});
+document.getElementById("year").textContent=new Date().getFullYear();
+const menu=document.getElementById("menu");
+const links=document.getElementById("links");
+menu.addEventListener("click",()=>{
+const opened=links.classList.toggle("open");
+menu.setAttribute("aria-expanded",String(opened));
+});
+links.querySelectorAll("a").forEach(link=>{
+link.addEventListener("click",()=>{
+links.classList.remove("open");
+menu.setAttribute("aria-expanded","false");
+});
+});
+
+// Accessible photo viewer: click a gallery image, use arrow keys, Escape to close.
+const galleryButtons=[...document.querySelectorAll(".gallery-open")];
+const lightbox=document.getElementById("lightbox");
+const lightboxImage=document.getElementById("lightbox-image");
+const lightboxCaption=document.getElementById("lightbox-caption");
+const closeButton=document.getElementById("lightbox-close");
+let currentPhoto=0;
+let lastFocused=null;
+function showPhoto(index){
+ currentPhoto=(index+galleryButtons.length)%galleryButtons.length;
+ const figure=galleryButtons[currentPhoto].closest("figure");
+ const image=figure.querySelector("img");
+ lightboxImage.src=image.getAttribute("src");
+ lightboxImage.alt=image.alt;
+ lightboxCaption.textContent=figure.querySelector("figcaption").textContent;
+}
+function openPhoto(index){
+ lastFocused=document.activeElement;
+ showPhoto(index);
+ lightbox.hidden=false;
+ document.body.classList.add("lightbox-open");
+ closeButton.focus();
+}
+function closePhoto(){
+ lightbox.hidden=true;
+ document.body.classList.remove("lightbox-open");
+ lightboxImage.removeAttribute("src");
+ if(lastFocused)lastFocused.focus();
+}
+galleryButtons.forEach((button,index)=>button.addEventListener("click",()=>openPhoto(index)));
+closeButton.addEventListener("click",closePhoto);
+document.getElementById("lightbox-prev").addEventListener("click",()=>showPhoto(currentPhoto-1));
+document.getElementById("lightbox-next").addEventListener("click",()=>showPhoto(currentPhoto+1));
+lightbox.addEventListener("click",event=>{if(event.target===lightbox)closePhoto()});
+document.addEventListener("keydown",event=>{
+ if(!lightbox.hidden){
+  if(event.key==="Escape")closePhoto();
+  else if(event.key==="ArrowRight")showPhoto(currentPhoto+1);
+  else if(event.key==="ArrowLeft")showPhoto(currentPhoto-1);
+  else if(event.key==="Tab"){
+   const controls=[closeButton,document.getElementById("lightbox-prev"),document.getElementById("lightbox-next")];
+   const index=controls.indexOf(document.activeElement);
+   if(event.shiftKey && (index<=0)){event.preventDefault();controls[controls.length-1].focus()}
+   else if(!event.shiftKey && index===controls.length-1){event.preventDefault();controls[0].focus()}
+  }
+ }
+ else if(event.key==="Escape" && links.classList.contains("open")){
+  links.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.focus();
+ }
+});
 </script>
 </body>
 </html>
