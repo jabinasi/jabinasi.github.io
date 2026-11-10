@@ -10,6 +10,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script>
+/* Pick a new solid dark color theme on each page load. */
+(function () {
+  const themes = [
+    { bg: '#101b17', panel: '#192820', header: 'rgba(16,27,23,.93)' }, // Original dark green
+    { bg: '#151b30', panel: '#222b43', header: 'rgba(21,27,48,.93)' }, // Midnight blue
+    { bg: '#26172d', panel: '#37233e', header: 'rgba(38,23,45,.93)' }, // Deep plum
+    { bg: '#2c1d20', panel: '#3c2a2e', header: 'rgba(44,29,32,.93)' }, // Dark rose
+    { bg: '#202027', panel: '#303039', header: 'rgba(32,32,39,.93)' }  // Charcoal
+  ];
+  let previous = -1;
+  try { previous = Number(sessionStorage.getItem('jabinasiLastTheme') ?? -1); } catch (_) {}
+  let next = Math.floor(Math.random() * (themes.length - 1));
+  if (previous >= 0 && previous < themes.length && next >= previous) next++;
+  const theme = themes[next];
+  const root = document.documentElement;
+  root.style.setProperty('--bg', theme.bg);
+  root.style.setProperty('--panel', theme.panel);
+  root.style.setProperty('--header-bg', theme.header);
+  try { sessionStorage.setItem('jabinasiLastTheme', String(next)); } catch (_) {}
+})();
+</script>
 <style>
 :root{--bg:#101b17;--panel:#192820;--gold:#d7ba82;--cream:#f3f0e6;--muted:#b3bdb3}
 *{box-sizing:border-box}
@@ -18,7 +40,7 @@ body{margin:0;background:var(--bg);color:var(--cream);font-family:"DM Sans",sans
 a{color:inherit;text-decoration:none}
 button{font:inherit}
 .container{width:min(1120px,90%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:#101b17ed;border-bottom:1px solid #ffffff17;backdrop-filter:blur(16px)}
+header{position:sticky;top:0;z-index:10;background:var(--header-bg,#101b17ed);border-bottom:1px solid #ffffff17;backdrop-filter:blur(16px)}
 nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .logo{font-size:23px;font-weight:700;letter-spacing:4px;color:var(--gold)}
 .links{display:flex;gap:30px}
@@ -86,20 +108,6 @@ section[id],#home{scroll-margin-top:85px}
 .lightbox-next{right:12px;top:50%;transform:translateY(-50%)}
 body.lightbox-open{overflow:hidden}
 @media(max-width:700px){.lightbox{padding:68px 46px 58px}.lightbox-control{width:36px;height:36px}.lightbox-prev{left:5px}.lightbox-next{right:5px}}
-
-/* Animated background: a fresh palette on every page load. */
-body {
-  background: linear-gradient(125deg, var(--bg1, #101b17), var(--bg2, #243e35), var(--bg3, #382c40));
-  background-size: 350% 350%;
-  animation: backgroundDrift 20s ease-in-out infinite;
-}
-@keyframes backgroundDrift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-@media (prefers-reduced-motion: reduce) {
-  body { animation: none; }
-}
 </style>
 </head>
 <body>
@@ -202,24 +210,6 @@ body {
 </div>
 </footer>
 <script>
-// Choose a different palette from the previous visit, when possible.
-(function () {
-  const palettes = [
-    ["#101b17", "#294a3b", "#423349"], // Forest dusk
-    ["#101d32", "#234f70", "#493d65"], // Midnight ocean
-    ["#281b32", "#603d64", "#3b334f"], // Velvet plum
-    ["#1d2924", "#496348", "#554233"], // Olive bronze
-    ["#251e32", "#674352", "#3b5261"]  // Rose twilight
-  ];
-  let previous = -1;
-  try { previous = Number(sessionStorage.getItem("jabinasiLastPalette")); } catch (_) {}
-  let index = Math.floor(Math.random() * (palettes.length - 1));
-  if (Number.isInteger(previous) && previous >= 0 && previous < palettes.length && index >= previous) index++;
-  const chosen = palettes[index];
-  ["--bg1", "--bg2", "--bg3"].forEach((name, i) => document.body.style.setProperty(name, chosen[i]));
-  try { sessionStorage.setItem("jabinasiLastPalette", String(index)); } catch (_) {}
-})();
-
 document.getElementById("year").textContent=new Date().getFullYear();
 const menu=document.getElementById("menu");
 const links=document.getElementById("links");
